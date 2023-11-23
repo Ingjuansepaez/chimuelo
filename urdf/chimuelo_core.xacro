@@ -1,0 +1,811 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+  <link
+    name="base_link">
+    <origin xyz="-0.021674 0.0012486 0.22614" rpy="0 0 0"/>
+    <inertial>
+      <origin
+        xyz="-0.021674 0.0012486 0.02614"
+        rpy="0 0 0" />
+      <mass
+        value="26.9434" />
+      <inertia
+        ixx="0.097544"
+        ixy="-0.00014641"
+        ixz="0.012133"
+        iyy="0.12117"
+        iyz="0.00018542"
+        izz="0.1655" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69412 0.098039 0.098039 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name = "base_footprint">
+  </link>
+  <joint name="base_joint" type="fixed">
+  	<origin xyz="0 0 0.2" rpy="0 -0.155 0" />
+    <parent link="base_footprint"/>
+    <child link="base_link" />
+  </joint>
+  <link
+    name="support_right_link">
+    <inertial>
+      <origin
+        xyz="0.004811 -0.076737 0.049761"
+        rpy="0 0 0" />
+      <mass
+        value="0.35361" />
+      <inertia
+        ixx="0.0028314"
+        ixy="-8.4377E-06"
+        ixz="5.4716E-06"
+        iyy="0.00092025"
+        iyz="0.0011281"
+        izz="0.0019284" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/support_right_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/support_right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="support_right_joint"
+    type="fixed">
+    <origin
+      xyz="0.020526 -0.15792 0.071163"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="support_right_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="front_right_wheel">
+    <inertial>
+      <origin
+        xyz="-0.030145 7.2299E-06 -7.774E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.95802" />
+      <inertia
+        ixx="0.0027027"
+        ixy="3.8106E-07"
+        ixz="-4.0985E-08"
+        iyy="0.0015854"
+        iyz="-3.6463E-09"
+        izz="0.0015854" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/front_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.027 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+        <!--mesh
+          filename="package://chimuelo/meshes/front_right_wheel.STL" /-->
+        <cylinder length="0.054" radius="0.079375" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_joint"
+    type="continuous">
+    <origin
+      xyz="0.15956 -0.22452 -0.14324"
+      rpy="0.150640 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_right_wheel" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="support_left_wheel">
+    <inertial>
+      <origin
+        xyz="-0.007811 -0.076737 0.049761"
+        rpy="0 0 0" />
+      <mass
+        value="0.35361" />
+      <inertia
+        ixx="0.0028314"
+        ixy="8.4377E-06"
+        ixz="-5.4716E-06"
+        iyy="0.00092025"
+        iyz="0.0011281"
+        izz="0.0019284" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/support_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/support_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="support_left_joint"
+    type="fixed">
+    <origin
+      xyz="0.020526 0.16108 0.071163"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="support_left_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="front_left_wheel">
+    <inertial>
+      <origin
+        xyz="0.080855 -3.7512E-06 6.2293E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.95802" />
+      <inertia
+        ixx="0.0027027"
+        ixy="-1.9771E-07"
+        ixz="3.2833E-07"
+        iyy="0.0015854"
+        iyz="-1.5204E-08"
+        izz="0.0015854" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/front_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.081 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+        <!--mesh
+          filename="package://chimuelo/meshes/front_left_wheel.STL" /-->
+        <cylinder length="0.054" radius="0.079375" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_joint"
+    type="continuous">
+    <origin
+      xyz="0.15956 0.11368 -0.14324"
+      rpy="0.150640 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_left_wheel" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="rear_right_link">
+    <inertial>
+      <origin
+        xyz="-0.013975 0.054321 9.9024E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.053734" />
+      <inertia
+        ixx="2.524E-05"
+        ixy="-1.6585E-06"
+        ixz="9.9779E-08"
+        iyy="2.9055E-05"
+        iyz="2.0355E-07"
+        izz="2.0458E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/rear_right_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0.07459 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <!--mesh
+          filename="package://chimuelo/meshes/rear_right_link.STL" /-->
+        <box size="0.107 0.086 0.025" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_joint1"
+    type="continuous">
+    <origin
+      xyz="-0.12756 -0.076921 -0.14918"
+      rpy="1.5688 0.13961 -0.014686" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_right_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="rear_right_wheel">
+    <inertial>
+      <origin
+        xyz="0.0014035 7.5454E-12 1.17E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.2056" />
+      <inertia
+        ixx="0.00020145"
+        ixy="-4.2403E-14"
+        ixz="-5.6953E-14"
+        iyy="0.00011972"
+        iyz="5.3531E-16"
+        izz="0.00011972" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/rear_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 -1.5708 0" />
+      <geometry>
+        <!--mesh
+          filename="package://chimuelo/meshes/rear_right_wheel.STL" /-->
+        <cylinder length="0.032" radius="0.045" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_joint2"
+    type="continuous">
+    <origin
+      xyz="-0.03659 0.014924 -0.0015141"
+      rpy="2.894 -1.5708 0" />
+    <parent
+      link="rear_right_link" />
+    <child
+      link="rear_right_wheel" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="rear_left_link">
+    <inertial>
+      <origin
+        xyz="-0.013975 0.054321 9.9024E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.053734" />
+      <inertia
+        ixx="2.524E-05"
+        ixy="-1.6585E-06"
+        ixz="9.9779E-08"
+        iyy="2.9055E-05"
+        iyz="2.0355E-07"
+        izz="2.0458E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/rear_left_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0.07459 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <!--mesh
+          filename="package://chimuelo/meshes/rear_left_link.STL" /-->
+        <box size="0.107 0.086 0.025" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_joint1"
+    type="continuous">
+    <origin
+      xyz="-0.12756 0.077079 -0.14918"
+      rpy="1.5688 0.13961 -0.014686" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_left_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="rear_left_wheel">
+    <inertial>
+      <origin
+        xyz="0.0014035 7.5453E-12 1.17E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.2056" />
+      <inertia
+        ixx="0.00020145"
+        ixy="-4.2403E-14"
+        ixz="-5.6953E-14"
+        iyy="0.00011972"
+        iyz="5.3532E-16"
+        izz="0.00011972" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/rear_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 -1.5708 0" />
+      <geometry>
+        <!--mesh
+          filename="package://chimuelo/meshes/rear_left_wheel.STL" /-->
+        <cylinder length="0.032" radius="0.045" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_joint2"
+    type="continuous">
+    <origin
+      xyz="-0.03659 0.014924 -0.0015141"
+      rpy="2.894 -1.5708 0" />
+    <parent
+      link="rear_left_link" />
+    <child
+      link="rear_left_wheel" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="camerafront_Link">
+    <origin 
+        xyz =" 0 0 0"
+        rpy = "0 0.139 0 "/>
+    <inertial>
+      <origin
+        xyz="-0.002 4.4409E-16 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.016731" />
+      <inertia
+        ixx="1.6437E-05"
+        ixy="-4.8473E-23"
+        ixz="3.2529E-22"
+        iyy="2.278E-06"
+        iyz="-8.5424E-22"
+        izz="1.4204E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/camerafront_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/camerafront_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camerafront_joint"
+    type="fixed">
+    <origin
+      xyz="0.21053 7.9351E-05 0.035594"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camerafront_Link" />
+    <axis
+      xyz="0 0 0"
+      rpy="0 0.139 0" />
+  </joint>
+  <link
+    name="cameraback_Link">
+    <inertial>
+      <origin
+        xyz="-0.0016341 -2.4731E-06 -0.0011538"
+        rpy="0 0 0" />
+      <mass
+        value="0.011713" />
+      <inertia
+        ixx="9.0103E-06"
+        ixy="-4.9082E-11"
+        ixz="4.3103E-07"
+        iyy="9.4862E-07"
+        iyz="7.7782E-11"
+        izz="8.6965E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/cameraback_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/cameraback_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cameraback_joint"
+    type="fixed">
+    <origin
+      xyz="-0.24453 0.0020794 0.17412"
+      rpy="0 -0.17323 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="cameraback_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <!-- ************************LIDAR**********************************-->
+  <link
+    name="lidar_Link">
+    <origin
+        
+        rpy="0 0 0" xyz="-1.8682E-06 0.000177 -0.03563" />
+    <inertial>
+      <origin
+        xyz="-1.8682E-06 0.000177 -0.03563"
+        rpy="0 0 0" />
+      <mass
+        value="0.61591" />
+      <inertia
+        ixx="0.00069061"
+        ixy="-2.0789E-10"
+        ixz="-3.8206E-08"
+        iyy="0.00068379"
+        iyz="3.1803E-06"
+        izz="0.00083915" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/lidar_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.95294 0.99608 0.69412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/lidar_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0.0024523 0.0019288 0.2346"
+      rpy="0 0 0" />
+    <parent
+      link="base_footprint" />
+    <child
+      link="lidar_Link" />
+    <axis
+      xyz="0 0 0" 
+      rpy="0 0 0"/>
+  </joint>
+  <!-- ************************ FIN LIDAR**********************************-->
+  <link
+    name="sup_Link">
+    <inertial>
+      <origin
+        xyz="0.0092271 -0.15 0.013958"
+        rpy="0 0 0" />
+      <mass
+        value="0.43898" />
+      <inertia
+        ixx="0.0061052"
+        ixy="-8.9571E-08"
+        ixz="0.0015258"
+        iyy="0.0078076"
+        iyz="2.3811E-08"
+        izz="0.011427" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/sup_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0,901960784313726 0,901960784313726 0,901960784313726 0.3" />
+      </material>
+      
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/sup_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sup_joint"
+    type="fixed">
+    <origin
+      xyz="0.004191 0.15008 0.18491"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="sup_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  
+  <link
+    name="luces_Link">
+    <inertial>
+      <origin
+        xyz="-0.023886 -6.2177E-07 0.013779"
+        rpy="0 0 0" />
+      <mass
+        value="0.38703" />
+      <inertia
+        ixx="0.00085878"
+        ixy="2.2072E-09"
+        ixz="5.4087E-05"
+        iyy="0.0003374"
+        iyz="-3.4489E-10"
+        izz="0.00077205" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/luces_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/luces_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="luces_joint"
+    type="fixed">
+    <origin
+      xyz="-0.25232 0.0020794 0.13327"
+      rpy="0 0.10375 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="luces_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="tapas_Link">
+    <inertial>
+      <origin
+        xyz="-0.20387 0.019936 -0.0058955"
+        rpy="0 0 0" />
+      <mass
+        value="0.21518" />
+      <inertia
+        ixx="0.00087579"
+        ixy="0.00010122"
+        ixz="-1.7914E-08"
+        iyy="0.0010368"
+        iyz="5.0181E-09"
+        izz="0.00053638" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/tapas_Link.STL" />
+      </geometry>
+      
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chimuelo/meshes/tapas_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tapas_joint"
+    type="fixed">
+    <origin
+      xyz="0.21153 7.9351E-05 -0.032426"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="tapas_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint> 
+
+</robot>

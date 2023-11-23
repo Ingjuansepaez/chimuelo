@@ -1,0 +1,285 @@
+Panels:
+  - Class: rviz_common/Displays
+    Help Height: 78
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Image1
+        - /Image1/Topic1
+        - /Image2
+        - /Image2/Status1
+        - /Image2/Topic1
+        - /Image3
+        - /Image3/Topic1
+      Splitter Ratio: 0.5
+    Tree Height: 787
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz_default_plugins/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.029999999329447746
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Alpha: 0.6000000238418579
+      Class: rviz_default_plugins/RobotModel
+      Collision Enabled: false
+      Description File: ""
+      Description Source: Topic
+      Description Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /robot_description
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        cameraback_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        camerafront_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_left_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_right_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        lidar_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        luces_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_left_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_right_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sup_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        support_left_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        support_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        tapas_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        base_link:
+          Value: true
+        cameraback_Link:
+          Value: true
+        camerafront_Link:
+          Value: true
+        front_left_wheel:
+          Value: true
+        front_right_wheel:
+          Value: true
+        lidar_Link:
+          Value: true
+        luces_Link:
+          Value: true
+        sup_Link:
+          Value: true
+        support_left_wheel:
+          Value: true
+        support_right_link:
+          Value: true
+        tapas_Link:
+          Value: true
+      Marker Scale: 0.30000001192092896
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        base_link:
+          cameraback_Link:
+            {}
+          camerafront_Link:
+            {}
+          front_left_wheel:
+            {}
+          front_right_wheel:
+            {}
+          lidar_Link:
+            {}
+          luces_Link:
+            {}
+          sup_Link:
+            {}
+          support_left_wheel:
+            {}
+          support_right_link:
+            {}
+          tapas_Link:
+            {}
+      Update Interval: 0
+      Value: true
+    - Class: rviz_default_plugins/Image
+      Enabled: true
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image
+      Normalize Range: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Best Effort
+        Value: /bocbot/cameraback/obj_dete
+      Value: true
+    - Class: rviz_default_plugins/Image
+      Enabled: true
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image
+      Normalize Range: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Best Effort
+        Value: /bocbot/cameraback/image_raw
+      Value: true
+    - Class: rviz_default_plugins/Image
+      Enabled: true
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image
+      Normalize Range: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Best Effort
+        Value: /bocbot/camerafront/image_raw
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: base_link
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/Interact
+      Hide Inactive Objects: true
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: rviz_default_plugins/FocusCamera
+    - Class: rviz_default_plugins/Measure
+      Line color: 128; 128; 0
+  Transformation:
+    Current:
+      Class: rviz_default_plugins/TF
+  Value: true
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 1.4249157905578613
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.05999999865889549
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Focal Point:
+        X: 0.42219892144203186
+        Y: -0.21384195983409882
+        Z: -0.19274090230464935
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05000000074505806
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.009999999776482582
+      Pitch: 0.7053981423377991
+      Target Frame: <Fixed Frame>
+      Value: Orbit (rviz)
+      Yaw: 0.7953981161117554
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 1016
+  Hide Left Dock: false
+  Hide Right Dock: false
+  Image:
+    collapsed: false
+  QMainWindow State: 000000ff00000000fd0000000200000000000001560000039efc020000000bfb000000100044006900730070006c006100790073010000003d0000039e000000c900fffffffb0000000a0049006d00610067006502000001c7000000eb000002f8000001b6fb0000000a0049006d006100670065020000049f000000e8000002be000001bafb0000000a0049006d006100670065030000020a000001f400000156000000cbfb0000000a0049006d0061006700650300000209000002d400000156000000cbfb0000000a0049006d00610067006503000001de00000263000001fe00000195fb0000000a0049006d00610067006503000001dc000000c10000020300000199fb0000000a0049006d006100670065030000020e000002cd00000156000000cbfb0000000a0049006d006100670065030000038c000002af00000156000000cbfb0000000a0049006d0061006700650300000226000002ae00000156000000cbfb0000000a0049006d0061006700650300000223000001d900000156000000cb000000020000053600000106fc0100000001fb0000000a0049006d0061006700650000000000000005360000000000000000000005dc0000039e00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Width: 1848
+  X: 72
+  Y: 27
